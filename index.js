@@ -7,7 +7,10 @@ const Docxtemplater = require('docxtemplater');
 const app = express();
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://notapdfserver.onrender.com',
+    methods: ['GET', 'POST'],
+}));
 app.use(express.json());
 app.use(express.static('public'));
 
